@@ -9,10 +9,13 @@ The DASRS algorithm identifies and counts the sequences of normalized values tha
 
 Let <img src="https://render.githubusercontent.com/render/math?math=X_t "> be a time series with the observations <img src="https://render.githubusercontent.com/render/math?math=x_1, x_2, \dots ">. A sequence of <img src="https://render.githubusercontent.com/render/math?math=X_t "> is a subset of <img src="https://render.githubusercontent.com/render/math?math=X_t "> consisting of consecutive elements, for example, <img src="https://render.githubusercontent.com/render/math?math=x_i, \dots, x_j ">, with <img src="https://render.githubusercontent.com/render/math?math=i < j ">.
 
-Let X<sub>t</sub> "> be a time series with the observations <img src="https://render.githubusercontent.com/render/math?math=x_1, x_2, \dots ">. A sequence of <img src="https://render.githubusercontent.com/render/math?math=X_t "> is a subset of <img src="https://render.githubusercontent.com/render/math?math=X_t "> consisting of consecutive elements, for example, <img src="https://render.githubusercontent.com/render/math?math=x_i, \dots, x_j ">, with <img src="https://render.githubusercontent.com/render/math?math=i < j ">.
+Let X<sub>t</sub> be a time series with the observations x<sub>1</sub>, x<sub>2</sub>, ... . A sequence of X<sub>t</sub> is a subset of X<sub>t</sub> consisting of consecutive elements, for example, x<sub>i</sub>, ..., x<sub>j</sub>, with i < j.
 
 ### Normalization
 The normalization applied by DASRS consists of transforming the observation value into an integer between <img src="https://render.githubusercontent.com/render/math?math=0 "> and a normalization factor that we call <img src="https://render.githubusercontent.com/render/math?math=\theta ">. The equation below represents the operations performed on <img src="https://render.githubusercontent.com/render/math?math=x_i "> to get its normalized value (<img src="https://render.githubusercontent.com/render/math?math=x_i'">):
+
+The normalization applied by DASRS consists of transforming the observation value into an integer between 0 and a normalization factor that we call θ. The equation below represents the operations performed on x<sub>i</sub> to get its normalized value (x<sub>i</sub>'):
+
 
 <img src="https://render.githubusercontent.com/render/math?math=x_i' = \Big\lfloor \frac{x_i - min_X}{max_X - min_X} \times \theta \Big\rfloor ">
 
