@@ -55,7 +55,7 @@ The graph below shows the final anomaly scores calculated by DASRS Rest.
 
 We create DASRS Likelihood version from the [NuPIC library](http://nupic.docs.numenta.org/stable/index.html). DASRS Likelihood uses the anomaly likelihood metric, which is a measure of the probability of the current state being anomalous based on the history of the raw anomaly scores calculated by the algorithm. A detailed explanation of the Likelihood score calculation is in [Real-Time Anomaly Detection for Streaming Analytics](https://arxiv.org/abs/1607.02480) and [Unsupervised real-time anomaly detection for streaming data](https://doi.org/10.1016/j.neucom.2017.04.070).
 
-The graph below shows the final anomaly scores calculated by DASRS Rest.
+The graph below shows the final anomaly scores calculated by DASRS Likelihood.
 
 | **DASRS Likelihood Anomaly Scores** |
 | ------------- |
