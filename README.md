@@ -61,5 +61,9 @@ The graph below shows the final anomaly scores calculated by DASRS Likelihood.
 | ------------- |
 | <img src="doc/img/final_anomaly_sore_likelihood.png" height="50%" width="50%"> |
 
+
+###### DASRS Likelihood Anomaly Scores
+<img src="doc/img/final_anomaly_sore_likelihood.png" height="50%" width="50%">
+
 ### Reference
 For more details about DASRS, see the paper [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
