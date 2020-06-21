@@ -31,7 +31,11 @@ To address this, we develope two versions of DASRS: **DASRS Rest** and **DASRS L
 
 ### DASRS Rest
 
+DASRS Rest defines a period after identifying an anomaly, in which the final anomaly score should be smoothed. DASRS Rest understands that very close anomalies are part of the same phenomenon. Therefore, after identifying an anomaly, the following scores are decreased for a period defined by the **restPeriod** parameter.
+
 ### DASRS Likelihood
+
+We create DASRS Likelihood version from the [NuPIC library](http://nupic.docs.numenta.org/stable/index.html). DASRS Likelihood uses the anomaly likelihood metric, which is a measure of the probability of the current state being anomalous based on the history of the raw anomaly scores calculated by the algorithm. A detailed explanation of the Likelihood score calculation is in [Real-Time Anomaly Detection for Streaming Analytics](https://arxiv.org/abs/1607.02480) and [Unsupervised real-time anomaly detection for streaming data](https://doi.org/10.1016/j.neucom.2017.04.070).
 
 ### Reference
 For more details about DASRS, see the paper [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
