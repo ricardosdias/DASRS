@@ -15,7 +15,4 @@ The normalization applied by DASRS consists of transforming the observation valu
 
 <img src="https://render.githubusercontent.com/render/math?math=x_i' = \Big\lfloor \frac{x_i - min_X}{max_X - min_X} \times \theta \Big\rfloor ">
 
-Where <img src="https://render.githubusercontent.com/render/math?math=x_i"> is the input observation (<img src="https://render.githubusercontent.com/render/math?math=x_i \in \mathbb{R} ">), <img src="https://render.githubusercontent.com/render/math?math=min_X "> and <img src="https://render.githubusercontent.com/render/math?math=max_X "> are respectively the smallest and highest possible observation values of <img src="https://render.githubusercontent.com/render/math?math=X_t ">. <img src="https://render.githubusercontent.com/render/math?math=\theta ">  represents the normalization factor, <img src="https://render.githubusercontent.com/render/math?math=x_i' "> is the normalized value of <img src="https://render.githubusercontent.com/render/math?math=x_i "> observation, <img src="https://render.githubusercontent.com/render/math?math=x_i' \in \mathbb {N} "> and <img src="https://render.githubusercontent.com/render/math?math=0 \leq x_i' \leq \theta ">.
-
-
 Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</sub> and max<sub>X</sub> are respectively the smallest and highest possible observation values of X<sub>t</sub>. θ  represents the normalization factor, x<sub>i</sub>' is the normalized value of x<sub>i</sub> observation, x<sub>i</sub>' ∈  N and 0 ≤ x<sub>i</sub>' ≤ θ.
