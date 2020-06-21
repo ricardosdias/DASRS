@@ -25,7 +25,7 @@ We calculate the raw anomaly score, taking into account the current normalized s
 
 Where occurrences represents the number of times the current sequence appears.
 
-The above equation does not generate the final anomaly score. As explained in [Real-Time Anomaly Detection for Streaming Analytics](https://arxiv.org/pdf/1607.02480.pdf) and [Unsupervised real-time anomaly detection for streaming data](https://doi.org/10.1016/j.neucom.2017.04.070), many times, a dataset analyzed register unpredictable behaviors caused by noise or the random nature of some metrics, generating a large number of false positives.
+The above equation does not generate the final anomaly score. As explained in [Real-Time Anomaly Detection for Streaming Analytics](https://arxiv.org/abs/1607.02480) and [Unsupervised real-time anomaly detection for streaming data](https://doi.org/10.1016/j.neucom.2017.04.070), many times, a dataset analyzed register unpredictable behaviors caused by noise or the random nature of some metrics, generating a large number of false positives.
 
 To address this, we develope two versions of DASRS.
 
