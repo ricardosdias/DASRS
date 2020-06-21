@@ -19,7 +19,9 @@ Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</su
 
 The graphs below illustrate, respectively, a time series with observations of CPU usage and its equivalent normalized time series.
 
-<img src="doc/img/base_timeseries.png" height="45%" width="45%"> <img src="doc/img/norm_timeseries.png" height="45%" width="45%">
+| **Original Values**  | **Normalized Values** |
+| ------------- | ------------- |
+| <img src="doc/img/base_timeseries.png">  | <img src="doc/img/norm_timeseries.png">  |
 
 ### Raw Score
 
