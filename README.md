@@ -17,6 +17,8 @@ The normalization applied by DASRS consists of transforming the observation valu
 
 Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</sub> and max<sub>X</sub> are respectively the smallest and highest possible observation values of X<sub>t</sub>. θ  represents the normalization factor, x<sub>i</sub>' is the normalized value of x<sub>i</sub> observation, x<sub>i</sub>' ∈  N and 0 ≤ x<sub>i</sub>' ≤ θ.
 
+![alt text](doc/img/base_timeseries.png "Original Time Series")![alt text](doc/img/norm_timeseries.png "Normalized Time Series")
+
 ### Raw Score
 
 We calculate the raw anomaly score, taking into account the current normalized sequence and the number of times that sequence appeared in the past. The raw anomaly score is given by the following equation:
