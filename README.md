@@ -35,7 +35,7 @@ The graph below shows the raw anomaly scores calculated by DASRS.
 
 | **Raw Anomaly Scores** |
 | ------------- |
-| <img src="doc/img/raw_score.png"> |
+| <img src="doc/img/raw_score.png" height="50%" width="50%"> |
 
 The above equation does not generate the final anomaly score. As explained in [Real-Time Anomaly Detection for Streaming Analytics](https://arxiv.org/abs/1607.02480) and [Unsupervised real-time anomaly detection for streaming data](https://doi.org/10.1016/j.neucom.2017.04.070), many times, a dataset analyzed register unpredictable behaviors caused by noise or the random nature of some metrics, generating a large number of false positives.
 
@@ -47,9 +47,9 @@ DASRS Rest defines a period after identifying an anomaly, in which the final ano
 
 The graph below shows the final anomaly scores calculated by DASRS Rest.
 
-| **DASRS Rest Anomaly Scores** |
-| ------------- |
-| <img src="doc/img/final_anomaly_sore_rest.png"> |
+**DASRS Rest Anomaly Scores**
+-------------
+<img src="doc/img/final_anomaly_sore_rest.png" height="50%" width="50%">
 
 ### DASRS Likelihood
 
@@ -59,7 +59,7 @@ The graph below shows the final anomaly scores calculated by DASRS Rest.
 
 | **DASRS Likelihood Anomaly Scores** |
 | ------------- |
-| <img src="doc/img/final_anomaly_sore_likelihood.png"> |
+| <img src="doc/img/final_anomaly_sore_likelihood.png" height="50%" width="50%"> |
 
 ### Reference
 For more details about DASRS, see the paper [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
