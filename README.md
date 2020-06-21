@@ -17,7 +17,7 @@ The normalization applied by DASRS consists of transforming the observation valu
 
 Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</sub> and max<sub>X</sub> are respectively the smallest and highest possible observation values of X<sub>t</sub>. θ  represents the normalization factor, x<sub>i</sub>' is the normalized value of x<sub>i</sub> observation, x<sub>i</sub>' ∈  N and 0 ≤ x<sub>i</sub>' ≤ θ.
 
-<img src="doc/img/base_timeseries.png" height="50%" width="50%"> <img src="doc/img/norm_timeseries.png" height="50%" width="50%">
+<img src="doc/img/base_timeseries.png" height="45%" width="45%"> <img src="doc/img/norm_timeseries.png" height="45%" width="45%">
 
 ### Raw Score
 
