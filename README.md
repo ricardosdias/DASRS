@@ -17,5 +17,13 @@ The normalization applied by DASRS consists of transforming the observation valu
 
 Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</sub> and max<sub>X</sub> are respectively the smallest and highest possible observation values of X<sub>t</sub>. θ  represents the normalization factor, x<sub>i</sub>' is the normalized value of x<sub>i</sub> observation, x<sub>i</sub>' ∈  N and 0 ≤ x<sub>i</sub>' ≤ θ.
 
+### Raw Score
+
+We calculate the raw anomaly score, taking into account the current normalized sequence and the number of times that sequence appeared in the past. The raw anomaly score is given by the following equation:
+
+<img src="https://render.githubusercontent.com/render/math?math=Raw Score=\frac{1}{occurrences} ">
+
+Where occurrences represents the number of times the current sequence appears.
+
 ### Reference
 For more details about DASRS, see the paper [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
