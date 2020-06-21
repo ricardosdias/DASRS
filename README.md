@@ -47,9 +47,9 @@ DASRS Rest defines a period after identifying an anomaly, in which the final ano
 
 The graph below shows the final anomaly scores calculated by DASRS Rest.
 
-**DASRS Rest Anomaly Scores**
--------------
-<img src="doc/img/final_anomaly_sore_rest.png" height="50%" width="50%">
+| **DASRS Rest Anomaly Scores** |
+| ------------- |
+| <img src="doc/img/final_anomaly_sore_rest.png" height="50%" width="50%"> |
 
 ### DASRS Likelihood
 
