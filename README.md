@@ -21,7 +21,7 @@ Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</su
 
 We calculate the raw anomaly score, taking into account the current normalized sequence and the number of times that sequence appeared in the past. The raw anomaly score is given by the following equation:
 
-<img src="https://render.githubusercontent.com/render/math?math=Raw Score=\frac{1}{occurrences} ">
+<img src="https://render.githubusercontent.com/render/math?math=RawScore=\frac{1}{occurrences} ">
 
 Where occurrences represents the number of times the current sequence appears.
 
