@@ -1,7 +1,7 @@
 # Decreased Anomaly Score by Repeated Sequence (DASRS)
 ###### An Anomaly Detection Algorithm for Time Series
 
-![Decreased Anomaly Score by Repeated Sequence](doc/img/dasrs.png)
+<img src="doc/img/dasrs.png" height="70%" width="70%">
 
 The DASRS algorithm identifies and counts the sequences of normalized values that appear in a time series and generates an anomaly score as a function of the number of times it identifies each sequence. We normalize observed values to limit the number of distinct sequences without changing the main characteristics of a time series. As the normalization reduces the number of distinct sequences, we can increase the performance of the anomaly detection algorithm. The first time DASRS identifies a given sequence, the returned score is as high as possible because the algorithm interprets it as a new behavior. Otherwise, the returned score decreases as the number of times a given sequence is found.
 
@@ -17,7 +17,7 @@ The normalization applied by DASRS consists of transforming the observation valu
 
 Where x<sub>i</sub> is the input observation (x<sub>i</sub> ∈ R, min<sub>X</sub> and max<sub>X</sub> are respectively the smallest and highest possible observation values of X<sub>t</sub>. θ  represents the normalization factor, x<sub>i</sub>' is the normalized value of x<sub>i</sub> observation, x<sub>i</sub>' ∈  N and 0 ≤ x<sub>i</sub>' ≤ θ.
 
-![alt text](doc/img/base_timeseries.png "Original Time Series")![alt text](doc/img/norm_timeseries.png "Normalized Time Series")
+<img src="doc/img/base_timeseries.png" height="50%" width="50%"> <img src="doc/img/norm_timeseries.png" height="50%" width="50%">
 
 ### Raw Score
 
