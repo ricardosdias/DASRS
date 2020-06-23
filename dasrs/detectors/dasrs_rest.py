@@ -6,18 +6,18 @@ class DasrsRest(DasrsAnomalyDetector):
         self,
         minValue,
         maxValue,
-        restPeriod=10,
+        probationaryPeriod=50,
         normValue=7,
         memoryWindow=2):
         super(DasrsRest, self).__init__(
-            minValue, maxValue, normValue, memoryWindow
+            minValue, maxValue, probationaryPeriod, normValue, memoryWindow
         )
 
-        self.restPeriod = restPeriod
+        self.restPeriod = probationaryPeriod / 5.0
         self.restWeakenFactor = 0
         self.baseThreshold = 1.0
 
-    def computeFinalScore(self, currentScore):
+    def computeFinalScore(self, currentScore, inputValue, inputTimestamp):
         finalScore = currentScore
         if self.restWeakenFactor > 0:
             finalScore = round(currentScore / self.restWeakenFactor, 2)

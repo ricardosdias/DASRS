@@ -4,11 +4,13 @@ class DasrsAnomalyDetector(object):
         self,
         minValue,
         maxValue,
+        probationaryPeriod,
         normValue,
         memoryWindow):
 
         self.minValue = minValue
         self.maxValue = maxValue
+        self.probationaryPeriod = probationaryPeriod
         self.normValue = normValue
         self.memoryWindow = memoryWindow
         self.fullValueRange = self.maxValue - self.minValue
@@ -22,10 +24,11 @@ class DasrsAnomalyDetector(object):
         score = round(1.0 / occurrences, 2)
         return score
 
-    def computeFinalScore(self, currentScore):
+    def computeFinalScore(self, currentScore, inputValue, inputTimestamp):
         return currentScore
 
-    def getAnomalyScore(self, inputValue):
+    def getAnomalyScore(self, inputValue, inputTimestamp=None):
+
         normInpVal = int((inputValue - self.minValue) / self.valueStep)
         self.normInputWindow.append(normInpVal)
 
@@ -38,7 +41,10 @@ class DasrsAnomalyDetector(object):
         self.windows[windowHash] += 1
 
         currentAnomalyScore = self.computeScoreFromOccurrences(occurrences)
-        returnedAnomalyScore = self.computeFinalScore(currentAnomalyScore)
+        returnedAnomalyScore = self.computeFinalScore(
+            currentAnomalyScore,
+            inputValue,
+            inputTimestamp)
 
         self.normInputWindow.pop(0)
 
