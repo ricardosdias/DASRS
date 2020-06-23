@@ -60,7 +60,7 @@ def run_detector(input_path, output_path, file_name, timestamp_column,
     output_data.to_csv(output_file, index=False)
 
 def main(args):
-    print('running tests')
+    print('running detector')
 
     input_path = args.input_path
     output_path = args.output_path
@@ -80,11 +80,11 @@ if __name__ == '__main__':
 
     parser.add_argument("--input_path",
                     help="Input data path",
-                    default='tests/input_test_data')
+                    default='scripts/input_test_data')
 
     parser.add_argument("--output_path",
                     help="Output data path",
-                    default='tests/output_test_data')
+                    default='scripts/output_test_data')
 
     parser.add_argument("--timestamp_column",
                     help="Timestamp column name",

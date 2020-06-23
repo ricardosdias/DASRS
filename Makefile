@@ -1,2 +1,2 @@
-run_tests:
-	python -m tests.run_tests
+run:
+	python -m scripts.run_detector
