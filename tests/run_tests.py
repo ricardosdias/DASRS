@@ -1,7 +1,9 @@
 import pandas as pd
+import os
 import math
 import argparse
 from dasrs.detectors.dasrs_rest import DasrsRest
+from dasrs.detectors.dasrs_likelihood import DasrsLikelihood
 
 PROBATIONARY_PERCENT = 0.15
 
@@ -11,16 +13,21 @@ def getProbationPeriod(probationPercent, fileLength):
         probationPercent * 5000
     )
 
-def main(args):
-    print('running tests')
+def list_input_files(input_path):
+    input_files = []
+    for file in os.listdir(input_path):
+        if file.endswith(".csv"):
+            input_files.append(file)
+    return input_files
 
-    input_file = args.input_file
-    output_file = args.output_file
-    timestamp_column = args.timestamp_column
-    value_column = args.value_column
-    output_columns = [timestamp_column, value_column, 'anomalyScore']
+def run_detector(input_path, output_path, file_name, timestamp_column,
+                 value_column, detector_name):
 
+    input_file = os.path.join(input_path, file_name)
     input_data = pd.read_csv(input_file)
+    output_file = os.path.join(output_path, "{}-{}".format(
+        detector_name, file_name))
+    output_columns = [timestamp_column, value_column, 'anomalyScore']
 
     min_value = input_data[value_column].min()
     max_value = input_data[value_column].max()
@@ -28,34 +35,56 @@ def main(args):
         PROBATIONARY_PERCENT,
         input_data.shape[0])
 
-    detector = DasrsRest(
-        minValue=min_value,
-        maxValue=max_value,
-        restPeriod=probationary_period / 5.0)
+    if detector_name == 'DASRS_REST':
+        detector = DasrsRest(
+            minValue=min_value,
+            maxValue=max_value,
+            probationaryPeriod=probationary_period)
+    elif detector_name == 'DASRS_LIKELIHOOD':
+        detector = DasrsLikelihood(
+            minValue=min_value,
+            maxValue=max_value,
+            probationaryPeriod=probationary_period)
+    else:
+        return
 
     output_rows = []
     for i, row in input_data.iterrows():
-        #pdb.set_trace()
         input_timestamp = row[timestamp_column]
         input_value = row[value_column]
-        anomaly_score = detector.getAnomalyScore(input_value)
+        anomaly_score = detector.getAnomalyScore(input_value, input_timestamp)
         output_row = (input_timestamp, input_value, anomaly_score)
         output_rows.append(output_row)
 
     output_data = pd.DataFrame(output_rows, columns=output_columns)
     output_data.to_csv(output_file, index=False)
 
+def main(args):
+    print('running tests')
+
+    input_path = args.input_path
+    output_path = args.output_path
+    timestamp_column = args.timestamp_column
+    value_column = args.value_column
+
+    input_files = list_input_files(input_path)
+    #print(input_files)
+    for file_name in input_files:
+        run_detector(input_path, output_path, file_name, timestamp_column,
+            value_column, 'DASRS_REST')
+        run_detector(input_path, output_path, file_name, timestamp_column,
+            value_column, 'DASRS_LIKELIHOOD')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--input_file",
-                    help="Input file path",
-                    default='tests/test_data/test_data_01.csv')
+    parser.add_argument("--input_path",
+                    help="Input data path",
+                    default='tests/input_test_data')
 
-    parser.add_argument("--output_file",
-                    help="Output file path",
-                    default='tests/test_data/output_test_data_01.csv')
+    parser.add_argument("--output_path",
+                    help="Output data path",
+                    default='tests/output_test_data')
 
     parser.add_argument("--timestamp_column",
                     help="Timestamp column name",
