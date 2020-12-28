@@ -59,4 +59,9 @@ The graph below shows the final anomaly scores calculated by DASRS Likelihood.
 <img src="doc/img/final_anomaly_sore_likelihood.png" height="50%" width="50%">
 
 ### Reference
-For more details about DASRS, see the paper [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
+
+This readme is a brief overview. For more details about DASRS, see the following papers:
+
+* [Anomaly detection in data center machine monitoring metrics](https://www.maxwell.vrac.puc-rio.br/colecao.php?strSecao=resultado&nrSeq=46523@2)
+* [Toward an Efficient Real-Time Anomaly Detection System for Cloud Datacenters](https://ieeexplore.ieee.org/abstract/document/9142768)
+* [DASRS Rest: Um Algoritmo Eficiente de Detecção de Anomalias em Tempo Real para Data Centers](https://sol.sbc.org.br/index.php/sbrc/article/view/12317)
