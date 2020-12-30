@@ -13,7 +13,7 @@ class DasrsRest(DasrsAnomalyDetector):
             minValue, maxValue, probationaryPeriod, normValue, memoryWindow
         )
 
-        self.restPeriod = probationaryPeriod / 5.0
+        self.restPeriod = int(probationaryPeriod / 5.0)
         self.restWeakenFactor = 0
         self.baseThreshold = 1.0
 
