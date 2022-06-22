@@ -1,4 +1,4 @@
 pandas==0.22.0
-numpy==1.12.1
+numpy==1.22.0
 python-dateutil==2.1
 nupic==1.0.5
